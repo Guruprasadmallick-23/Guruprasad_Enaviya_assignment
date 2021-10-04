@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add abd Remove table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Dynamically Add & Remove Table Rows</h1>
+    <form>
+      <div class="input-row">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="input-row">
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject" />
+      </div>
+      <div class="input-row">
+        <label for="number">Marks:</label>
+        <input type="number" name="number" id="number" />
+      </div>
+      <button class="submit-type">submit</button>
+    </form>
+    <table class="table-element">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Marks</th>
+          <th>Option</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      const formEl = document.querySelector("form");
+      const tbodyEl = document.querySelector("tbody");
+      const tableEl = document.querySelector("table");
+      function onAddForm(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const subject = document.getElementById("subject").value;
+        const marks = document.getElementById("number").value;
+        tbodyEl.innerHTML += `
+            <tr>
+                <td>${name}</td>
+                <td>${subject}</td>
+                <td>${marks}</td>
+                <td><button class="deleteBtn">Delete</button></td>
+            </tr>
+        `;
+      }
+
+      function onDeleteRow(e) {
+        if (!e.target.classList.contains("deleteBtn")) {
+          return;
+        }
+
+        const btn = e.target;
+        btn.closest("tr").remove();
+      }
+
+      formEl.addEventListener("submit", onAddForm);
+      tableEl.addEventListener("click", onDeleteRow);
+    </script>
+</body>
+</html>

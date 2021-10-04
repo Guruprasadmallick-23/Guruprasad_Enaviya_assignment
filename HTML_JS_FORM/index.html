@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <form id="myForm"  method="post" action="">
+        <header class="headcontainer"><h2>Employee Form</h2></header>
+        <div>
+            <label for="text">Name:</label>
+            <input type="text" id="text" name="text" required>
+            <span class="error">This field is required</span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error">A valid email address is required</span>				
+        </div>
+        <div>
+            <label for="ph">Phone number:</label>
+            <input type="ph" id="ph" name="ph">
+            <span class="error">A valid phone number is required</span>				
+        </div>
+        <div class="nativeDateTimPicker">
+            <label for="startDate">DOB:</label>
+            <input type="datetime-local" id="startDate" name="startDate">
+            <span class="validity"></span>
+        </div>
+        <div class="dropdown">
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                <option value="india">India</option>
+                <option value="bangladesh">Bangladesh</option>
+                <option value="nepal">Nepal</option>
+                <option value="srilanka">Sri Lanka</option>
+            </select>
+            <label for="city" class="label-drop">City</label>
+            <select name="city" id="city" class="drop-class">
+                <option value="kolkata">Kolkata</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="surat">Surat</option>
+                <option value="chennai">Chennai</option>
+            </select>
+            <label for="state" class="label-drop">State</label>
+            <select name="state" id="state" class="drop-class">
+                <option value="tamilnadu">Tamilnadu</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="west Bengal">West Bengal</option>
+                <option value="gujrat">Gujrat</option>
+            </select>
+        </div>
+        <div class="add">
+            <label for="address" class="address-type">Address:</label>
+            <textarea id="address" name="address" rows="4" cols="50"></textarea>
+        </div>
+        <button type="submit" value="Submit" class="submit-button" id="submit">Submit</button>
+        <button type="cancel" value="Cancel" class="cancel-button" id="cancel">Cancel</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+html, input{
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    width: 35%;
+    height: 150%;
+    padding: 20px;
+    background-color: rgb(241, 237, 229);
+    border: 2px solid rgb(150, 147, 147);
+    border-radius: 6px;
+    margin-top: 70px;
+    box-shadow: 7px 7px 17px;
+}
+
+h2{
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-left: 40px;
+}
+
+div{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    width: 78%;
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+label{
+    width: 25%;
+}
+
+label .address-type{
+    margin-top: 30px;
+}
+
+textarea{
+    width: 78%;
+}
+
+.drop-class{
+    margin-left: -13px;
+}
+
+.label-drop{
+    margin-left: 8px;
+}
+
+.submit-button{
+    margin-left: 200px;
+    background-color: blue;
+    color: white;
+    width: 15%;
+}
+
+.cancel-button{
+    background-color: rgb(245, 94, 94);
+}
+
+.error{
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}

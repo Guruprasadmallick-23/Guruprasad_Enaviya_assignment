@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <input type="text " id="myInput" placeholder="type here....." onkeyup="searchFun()">
+    <table id="myTable">
+          <tr class="header">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email id</th>
+            <th>Mobile</th>
+            <th>D.O.B</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+          </tr>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Guru</td>
+                <td>Guru@gmail.com</td>
+                <td>9999999</td>
+                <td>12/02/98</td>
+                <td>India</td>
+                <td>WB</td>
+                <td>KOlkata</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>prasun</td>
+                <td>prasun@gmail.com</td>
+                <td>888888</td>
+                <td>11/02/98</td>
+                <td>India</td>
+                <td>JH</td>
+                <td>Ranchi</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Arpan</td>
+                <td>arpan@gmail.com</td>
+                <td>7777777</td>
+                <td>19/02/98</td>
+                <td>India</td>
+                <td>WB</td>
+                <td>Durgapur</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>john</td>
+                <td>john@gmail.com</td>
+                <td>9999988</td>
+                <td>16/02/98</td>
+                <td>India</td>
+                <td>WB</td>
+                <td>Howrah</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Arijit</td>
+                <td>Arijit@gmail.com</td>
+                <td>999978757</td>
+                <td>15/02/98</td>
+                <td>India</td>
+                <td>WB</td>
+                <td>Chandrakona</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <script>
+          const searchFun = () =>{
+                 let filter = document.getElementById('myInput').ariaValueMax.toLocaleUpperCase();
+
+                 let myTable = document.getElementById('myTable');
+
+                 let tr = myTable.getElementsByTagName('tr');
+
+                 for(var i=0; i<tr.length; i++){
+                     let td = tr[i].getElementsByTagName('td')[0];
+
+                     if(td){
+                         let textvalue = td.textContent || td.innerHTML;
+
+                         if(textvalue.toLocaleUpperCase().indexOf(filter) > -1){
+                             tr[i].style.display="";
+
+                         }else{
+                             tr[i].style.display ="none";
+                         }
+                     }
+    }
+}
+      </script>
+    
+</body>
+</html>
